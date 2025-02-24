@@ -130,7 +130,9 @@ if uploaded_files:
                 mime=mime_type
             )
 
-    st.success("🎉 All files processed successfully!")
-    st.balloons()
+  # ✅ Show balloons only after download
+        if file_downloaded:
+            st.success("🎉 File downloaded successfully!")
+            st.balloons()
 
 
