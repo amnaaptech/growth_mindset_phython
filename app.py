@@ -123,7 +123,7 @@ if uploaded_files:
                 mime_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 
             buffer.seek(0)
-            st.download_button(
+            downloaded =  st.download_button(
                 label=f"📥 Download {file.name} as {conversion_type}",
                 data=buffer,
                 file_name=file.name,
@@ -131,7 +131,7 @@ if uploaded_files:
             )
 
   # ✅ Show balloons only after download
-        if file_downloaded:
+        if   downloaded :
             st.success("🎉 File downloaded successfully!")
             st.balloons()
 
