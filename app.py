@@ -118,20 +118,19 @@ if uploaded_files:
                 mime_type = "text/csv"
 
             elif conversion_type == "Excel":
-                df.to_excel(buffer, index=False)
+                df.to_excel(buffer, index=False, engine="openpyxl")
                 file.name = file.name.replace(file_ext, ".xlsx")
                 mime_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 
             buffer.seek(0)
-            downloaded =  st.download_button(
+            st.download_button(
                 label=f"📥 Download {file.name} as {conversion_type}",
                 data=buffer,
                 file_name=file.name,
                 mime=mime_type
             )
-            
 
-st.success("🎉 File downloaded successfully!")
+    st.success("🎉 All files processed successfully!")
+    
 
-            
 
