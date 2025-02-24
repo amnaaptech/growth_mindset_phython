@@ -129,8 +129,9 @@ if uploaded_files:
                 file_name=file.name,
                 mime=mime_type
             )
+            
 
- st.success("🎉 File downloaded successfully!")
+st.success("🎉 File downloaded successfully!")
 
             
 
