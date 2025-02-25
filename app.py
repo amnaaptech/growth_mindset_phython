@@ -26,7 +26,7 @@ if uploaded_files:
                 continue
         except Exception as e:
             st.error(f"❌ Error reading {file_ext} file: {e}")
-            continue  # Skip to the next file
+            continue 
 
         # ✅ Ensure DataFrame is valid
         if df is None or df.empty:
